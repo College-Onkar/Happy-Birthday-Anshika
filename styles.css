@@ -1,0 +1,308 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgba(168, 167, 167, 0.6);
+  margin: 0;
+  padding: 0;
+}
+
+/* Create the card container - made bigger */
+.birthdayCard {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 4s;
+}
+
+/* Change all :hover to .opened for click functionality */
+.birthdayCard.opened {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+}
+
+.birthdayCard.opened .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard.opened .front-text {
+  display: none;
+}
+
+/* Hide decorations when card opens */
+.birthdayCard.opened .wrap-deco {
+  display: none;
+}
+
+.birthdayCard.opened .wrap-decoTwo {
+  display: none;
+}
+
+.birthdayCard.opened .plate {
+  display: none;
+}
+
+/* Show photo when card opens */
+.birthday-photo {
+  display: none;
+  position: absolute;
+  width: 90%;
+  max-width: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.birthdayCard.opened .birthday-photo {
+  display: block;
+}
+
+/* Style the front of the card */
+.cardFront {
+  position: relative;
+  background-color: rgb(255, 246, 246);
+  width: 300px;
+  height: 420px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  transition: .4s;
+}
+
+.happy, .toyou {
+  position: relative;
+  font-family: didot;
+  text-align: center;
+  backface-visibility: hidden;
+  font-size: 35px;
+}
+
+.happy {
+  top: 238px;
+}
+
+.toyou {
+  top: 147px;
+}
+
+.bday {
+  position: relative;
+  font-family: arial;
+  font-size: 35px;
+  text-align: center;
+  top: 196px;
+}
+
+.wrap-deco {
+  position: absolute;
+  top: -230px;
+  left: -200px;
+}
+
+.decorations {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border: 3px solid #333;
+  border-radius: 50%;
+}
+
+.decorations:before, .decorations:after, .decorationsTwo:before, .decorationsTwo:after, .decorationsThree:before, .decorationsThree:after {
+  content: "";
+  position: absolute;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.decorations:before {
+  border-top: 40px solid #f15bb5;
+  top: 297px;
+  left: 210px;
+  transform: rotate(-5deg);
+}
+
+.decorations:after {
+  border-top: 40px solid #f4d35e;
+  top: 288px;
+  left: 260px;
+  transform: rotate(-17deg);
+}
+
+.decorationsTwo:before {
+  border-top: 40px solid #00f5d4;
+  top: 268px;
+  left: 315px;
+  transform: rotate(-30deg);
+}
+
+.decorationsTwo:after, .decorationsThree:after {
+  border-top: 40px solid #9b5de5;
+  top: 238px;
+  left: 355px;
+  transform: rotate(-40deg);
+}
+
+.wrap-decoTwo {
+  transform: scaleX(-1);
+  position: absolute;
+  top: -230px;
+  left: 495px;
+}
+
+.decorationsThree:before {
+  border-top: 40px solid #00bbf9;
+  top: 268px;
+  left: 315px;
+  transform: rotate(-30deg);
+}
+
+.plate {
+  position: absolute;
+  width: 160px;
+  height: 5px;
+  background-color: #00bbf9;
+  left: 70px;
+  top: 256px;
+}
+
+.cake {
+  position: absolute;
+  overflow: hidden;
+  width: 120px;
+  height: 60px;
+  background-color: #f15bb5;
+  border-radius: 10px 10px 0 0;
+  top: -60px;
+  left: 20px;
+  box-shadow: inset 0 -15px #f9c74f, inset 0 15px #432818;
+}
+
+.cake:before {
+  content: "";
+  position: absolute;
+  background-color: #432818;
+  width: 12px;
+  height: 24px;
+  top: 5px;
+  border-radius: 20px;
+  box-shadow: 12px 5px #f15bb5, 24px 0px #432818, 36px 2px #f15bb5, 48px 5px #432818, 60px 5px #f15bb5, 72px 0px #432818, 84px 5px #f15bb5, 96px 5px #432818, 108px 5px #f15bb5;
+}
+
+.plate:before {
+  content: "";
+  position: absolute;
+  background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #00f5d4 3px, #00f5d4 6px);
+  width: 8px;
+  height: 30px;
+  top: -90px;
+  left: 76px;
+}
+
+.plate:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 5px;
+  background-color: #333;
+  top: -95px;
+  left: 80px;
+}
+
+.flame {
+  position: absolute;
+  background-color: #fb5607;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  transform: rotate(-45deg);
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  top: -112px;
+  left: 71px;
+}
+
+/* Style the inside part of the card */
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 300px;
+  height: 420px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.wishes {
+  position: relative;
+  top: 20px;
+  margin: 25px;
+  padding-right: 10px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.korean-title {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 15px !important;
+  color: #333;
+}
+
+p {
+  font-family: 'Brush Script MT', 'Courier New', cursive;
+  color: #333;
+  margin: 10px 0;
+}
+
+.name {
+  margin-top: 20px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+/* Mobile responsive - scale down to fit screen */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    padding: 10px;
+  }
+  
+  .birthdayCard {
+    transform: perspective(2500px) scale(0.7);
+  }
+  
+  .birthdayCard.opened {
+    width: 600px;
+    transform: perspective(2500px) scale(0.55) rotate(0deg);
+    left: 30%;
+    margin-left: 75px;
+  }
+  
+  .birthdayCard.opened .cardFront {
+    transform: rotateY(-160deg);
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .birthdayCard {
+    transform: perspective(2500px) scale(0.6);
+  }
+  
+  .birthdayCard.opened {
+    transform: perspective(2500px) scale(0.48) rotate(0deg);
+    left: 30%;
+    margin-left: 5px;
+  }
+}
