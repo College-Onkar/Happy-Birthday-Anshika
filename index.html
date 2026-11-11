@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2B1B3D">
+  <title>Happy Birthday, Anshika</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage" id="stage" data-state="sealed">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="bunting" id="bunting" aria-hidden="true"></div>
+
+    <!-- Scene 1: sealed envelope -->
+    <section class="scene scene-envelope" aria-label="Sealed envelope">
+      <button class="envelope" id="envelope" type="button" aria-label="Break the seal to open the envelope">
+        <span class="env-part env-back"></span>
+        <span class="env-part env-card"><span class="env-card-text">For Anshika</span></span>
+        <span class="env-part env-front"></span>
+        <span class="env-part env-flap"></span>
+        <span class="env-part seal"><b>A</b></span>
+      </button>
+      <p class="hint">Something for you. Tap the seal to open it.</p>
+    </section>
+
+    <!-- Scene 2: cake and candle -->
+    <section class="scene scene-cake" aria-label="Birthday cake">
+      <h1 class="title">Happy Birthday<span>Anshika</span></h1>
+
+      <button class="cake-btn" id="cake" type="button" aria-label="Blow out the candle">
+        <svg viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#F2B632" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#F2B632" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="flameBody" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFD25A"/>
+              <stop offset="1" stop-color="#FB5607"/>
+            </linearGradient>
+            <pattern id="candleStripe" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+              <rect width="10" height="10" fill="#FFF7EC"/>
+              <rect width="5" height="10" fill="#E8587A"/>
+            </pattern>
+            <clipPath id="clipBottom"><rect x="30" y="170" width="180" height="82" rx="12"/></clipPath>
+            <clipPath id="clipTop"><rect x="58" y="112" width="124" height="62" rx="11"/></clipPath>
+          </defs>
+
+          <!-- plate -->
+          <ellipse cx="120" cy="268" rx="106" ry="10" fill="rgba(0,0,0,.28)"/>
+          <ellipse cx="120" cy="256" rx="108" ry="15" fill="#2A9D8F"/>
+          <ellipse cx="120" cy="252" rx="90" ry="10" fill="#238377"/>
+
+          <!-- bottom tier -->
+          <rect x="30" y="170" width="180" height="82" rx="12" fill="#E8587A"/>
+          <g clip-path="url(#clipBottom)" fill="#FFF7EC">
+            <rect x="24" y="164" width="192" height="16" rx="8"/>
+            <rect x="44" y="172" width="14" height="30" rx="7"/>
+            <rect x="82" y="172" width="14" height="22" rx="7"/>
+            <rect x="116" y="172" width="14" height="36" rx="7"/>
+            <rect x="152" y="172" width="14" height="24" rx="7"/>
+            <rect x="184" y="172" width="14" height="32" rx="7"/>
+          </g>
+          <g>
+            <rect x="52" y="218" width="9" height="4" rx="2" fill="#F2B632" transform="rotate(25 56 220)"/>
+            <rect x="88" y="226" width="9" height="4" rx="2" fill="#2A9D8F" transform="rotate(-30 92 228)"/>
+            <rect x="124" y="222" width="9" height="4" rx="2" fill="#FFF7EC" transform="rotate(60 128 224)"/>
+            <rect x="160" y="230" width="9" height="4" rx="2" fill="#F2B632" transform="rotate(-10 164 232)"/>
+            <rect x="190" y="220" width="9" height="4" rx="2" fill="#2A9D8F" transform="rotate(40 194 222)"/>
+            <rect x="70" y="238" width="9" height="4" rx="2" fill="#FFF7EC" transform="rotate(-50 74 240)"/>
+            <rect x="140" y="242" width="9" height="4" rx="2" fill="#2A9D8F" transform="rotate(15 144 244)"/>
+          </g>
+
+          <!-- top tier -->
+          <rect x="58" y="112" width="124" height="62" rx="11" fill="#F2B632"/>
+          <g clip-path="url(#clipTop)" fill="#FFF7EC">
+            <rect x="52" y="106" width="136" height="14" rx="7"/>
+            <rect x="72" y="114" width="12" height="26" rx="6"/>
+            <rect x="106" y="114" width="12" height="18" rx="6"/>
+            <rect x="140" y="114" width="12" height="30" rx="6"/>
+          </g>
+          <circle cx="82" cy="156" r="4" fill="#E8587A"/>
+          <circle cx="112" cy="162" r="4" fill="#2A9D8F"/>
+          <circle cx="138" cy="154" r="4" fill="#E8587A"/>
+          <circle cx="164" cy="162" r="4" fill="#2A9D8F"/>
+
+          <!-- candle -->
+          <rect x="113" y="62" width="14" height="52" rx="3" fill="url(#candleStripe)"/>
+          <rect x="119" y="54" width="2" height="9" rx="1" fill="#3a2a2a"/>
+
+          <!-- flame -->
+          <g class="flame-group">
+            <circle class="flame-glow" cx="120" cy="38" r="36" fill="url(#flameGlow)"/>
+            <g class="flame">
+              <path d="M120 18 C129 31 134 41 120 54 C106 41 111 31 120 18 Z" fill="url(#flameBody)"/>
+              <path d="M120 34 C124 40 125 45 120 50 C115 45 116 40 120 34 Z" fill="#FFF3B0"/>
+            </g>
+          </g>
+
+          <!-- smoke -->
+          <path class="smoke" d="M120 48 C111 38 129 30 120 18 C113 10 124 4 120 -4" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <p class="hint" id="wishHint" aria-live="polite">Make a wish, then tap the flame.</p>
+    </section>
+
+    <!-- Scene 3: photo and letter -->
+    <section class="scene scene-letter" aria-label="Your letter">
+      <article class="spread" id="spread" tabindex="-1">
+        <div class="photo-page">
+          <figure class="polaroid">
+            <img src="pop.jpg" alt="A collage of four photos of Anshika" decoding="async">
+            <figcaption>Anshika</figcaption>
+          </figure>
+          <button class="jump" id="jump" type="button">
+            Read the letter
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="letter-page" id="letterPage">
+          <p class="ko" lang="ko">안시카, 생일 축하해</p>
+          <p class="roman"><strong>saengil chukhae Anshika</strong></p>
+          <p class="greet">Hello Anshika!</p>
+          <p>Wishing you a very happy birthday! Hope you're doing well. May you have a day as bright as you make others feel!</p>
+          <p>You were the kindest, sweetest, and one of the most amazing people I have ever met in those three years. The craziness that came from our train and college rides are some of my best memories and I will always cherish them.</p>
+          <p>Thanks for making those years so memorable!<br>Have a great day.</p>
+          <p class="sign">Onkar</p>
+          <button class="again" id="again" type="button">Seal it up again</button>
+        </div>
+      </article>
+    </section>
+
+    <canvas id="confetti" aria-hidden="true"></canvas>
+  </main>
+
+  <script>
+    (function () {
+      var stage = document.getElementById('stage');
+      var envelope = document.getElementById('envelope');
+      var cake = document.getElementById('cake');
+      var again = document.getElementById('again');
+      var jump = document.getElementById('jump');
+      var spread = document.getElementById('spread');
+      var letterPage = document.getElementById('letterPage');
+      var wishHint = document.getElementById('wishHint');
+      var bunting = document.getElementById('bunting');
+
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var k = reduce ? 0.25 : 1;
+      var timers = [];
+      function later(fn, ms) { timers.push(setTimeout(fn, ms * k)); }
+      function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+      function setState(s) { stage.dataset.state = s; }
+
+      /* ---------- bunting ---------- */
+      var flagColors = ['#E8587A', '#F2B632', '#2A9D8F', '#FFF7EC', '#9B5DE5'];
+      for (var i = 0; i < 14; i++) {
+        var f = document.createElement('span');
+        f.style.background = flagColors[i % flagColors.length];
+        f.style.setProperty('--d', (i * 70) + 'ms');
+        f.style.setProperty('--s', (4 + (i % 4)) + 's');
+        bunting.appendChild(f);
+      }
+
+      /* ---------- letter reveal stagger ---------- */
+      Array.prototype.forEach.call(letterPage.children, function (el, idx) {
+        el.style.setProperty('--i', idx);
+      });
+
+      /* ---------- confetti ---------- */
+      var cvs = document.getElementById('confetti');
+      var ctx = cvs.getContext('2d');
+      var W = 0, H = 0, parts = [], running = false;
+      var colors = ['#F2B632', '#E8587A', '#2A9D8F', '#FFF7EC', '#9B5DE5', '#00BBF9'];
+
+      function resize() {
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = window.innerWidth; H = window.innerHeight;
+        cvs.width = W * dpr; cvs.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      function rand(a, b) { return a + Math.random() * (b - a); }
+
+      function burst(x, y, n, angle, spreadAngle, power) {
+        n = Math.round(n * (reduce ? 0.3 : 1));
+        for (var i = 0; i < n; i++) {
+          var a = angle + rand(-spreadAngle, spreadAngle);
+          var s = rand(power * 0.45, power);
+          parts.push({
+            x: x, y: y, vx: Math.cos(a) * s, vy: Math.sin(a) * s,
+            w: rand(6, 12), h: rand(4, 8), rot: rand(0, 6.28), vr: rand(-0.3, 0.3),
+            tilt: rand(0, 6.28), c: colors[(Math.random() * colors.length) | 0],
+            round: Math.random() < 0.25, age: 0, max: rand(150, 260)
+          });
+        }
+        start();
+      }
+
+      function rain(n) {
+        n = Math.round(n * (reduce ? 0.3 : 1));
+        for (var i = 0; i < n; i++) {
+          parts.push({
+            x: rand(0, W), y: rand(-H * 0.4, -10), vx: rand(-1, 1), vy: rand(1, 3.5),
+            w: rand(6, 11), h: rand(4, 8), rot: rand(0, 6.28), vr: rand(-0.2, 0.2),
+            tilt: rand(0, 6.28), c: colors[(Math.random() * colors.length) | 0],
+            round: Math.random() < 0.25, age: 0, max: rand(260, 400)
+          });
+        }
+        start();
+      }
+
+      function start() { if (!running) { running = true; requestAnimationFrame(tick); } }
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+        parts = parts.filter(function (p) { return p.age < p.max && p.y < H + 40; });
+        parts.forEach(function (p) {
+          p.age++;
+          p.vy += 0.2; p.vx *= 0.985; p.vy *= 0.99;
+          p.x += p.vx + Math.sin(p.tilt) * 0.6; p.y += p.vy;
+          p.rot += p.vr; p.tilt += 0.1;
+          var fade = p.age > p.max - 40 ? (p.max - p.age) / 40 : 1;
+          ctx.save();
+          ctx.globalAlpha = Math.max(fade, 0);
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.scale(1, Math.cos(p.tilt));
+          ctx.fillStyle = p.c;
+          if (p.round) { ctx.beginPath(); ctx.arc(0, 0, p.h / 1.6, 0, 6.28); ctx.fill(); }
+          else { ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); }
+          ctx.restore();
+        });
+        if (parts.length) requestAnimationFrame(tick);
+        else { running = false; ctx.clearRect(0, 0, W, H); }
+      }
+
+      /* ---------- flow ---------- */
+      envelope.addEventListener('click', function () {
+        if (stage.dataset.state !== 'sealed') return;
+        setState('opening');
+        var r = envelope.getBoundingClientRect();
+        burst(r.left + r.width / 2, r.top + r.height * 0.56, 36, -Math.PI / 2, 1.2, 9);
+        later(function () { setState('cake'); cake.focus({ preventScroll: true }); }, 2700);
+      });
+
+      cake.addEventListener('click', function () {
+        if (stage.dataset.state !== 'cake') return;
+        setState('blown');
+        wishHint.textContent = 'Wish made. Let it come true.';
+        var r = cake.getBoundingClientRect();
+        burst(r.left + r.width / 2, r.top + r.height * 0.2, 60, -Math.PI / 2, 1.4, 12);
+        later(function () {
+          burst(0, H, 70, -Math.PI / 3, 0.5, 20);
+          burst(W, H, 70, -Math.PI * 2 / 3, 0.5, 20);
+        }, 250);
+        later(function () { rain(90); }, 900);
+        later(function () {
+          setState('letter');
+          spread.focus({ preventScroll: true });
+        }, 2800);
+        later(function () { rain(70); }, 3600);
+      });
+
+      again.addEventListener('click', function () {
+        clearTimers();
+        setState('sealed');
+        wishHint.textContent = 'Make a wish, then tap the flame.';
+        letterPage.scrollTop = 0; spread.scrollTop = 0;
+        envelope.focus({ preventScroll: true });
+      });
+
+      jump.addEventListener('click', function () {
+        letterPage.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      });
+    })();
+  </script>
+</body>
+</html>
